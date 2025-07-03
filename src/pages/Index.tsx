@@ -1,12 +1,24 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { HeroSection } from "@/components/HeroSection";
+import { PlatformHighlights } from "@/components/PlatformHighlights";
+import { ForBuyersSection } from "@/components/ForBuyersSection";
+import { ForSellersSection } from "@/components/ForSellersSection";
+import { WhyAgentXstoreSection } from "@/components/WhyAgentXstoreSection";
+import { CTAFooter } from "@/components/CTAFooter";
 
 const Index = () => {
+  const scrollToWaitlist = () => {
+    const footer = document.querySelector('section:last-child');
+    footer?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <HeroSection onJoinWaitlist={scrollToWaitlist} />
+      <PlatformHighlights />
+      <ForBuyersSection onJoinWaitlist={scrollToWaitlist} />
+      <ForSellersSection onJoinWaitlist={scrollToWaitlist} />
+      <WhyAgentXstoreSection />
+      <CTAFooter />
     </div>
   );
 };

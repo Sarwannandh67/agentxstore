@@ -61,7 +61,22 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				'hero-bg': 'hsl(var(--hero-bg))',
+				'section-bg': 'hsl(var(--section-bg))',
+				'cta-primary': 'hsl(var(--cta-primary))',
+				'cta-hover': 'hsl(var(--cta-hover))',
+				'text-subtle': 'hsl(var(--text-subtle))',
+				'pattern-light': 'hsl(var(--pattern-light))'
+			},
+			backgroundImage: {
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-cta': 'var(--gradient-cta)'
+			},
+			boxShadow: {
+				'soft': 'var(--shadow-soft)',
+				'medium': 'var(--shadow-medium)',
+				'strong': 'var(--shadow-strong)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +99,42 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-cta': {
+					'0%, 100%': {
+						transform: 'scale(1)',
+						opacity: '1'
+					},
+					'50%': {
+						transform: 'scale(1.02)',
+						opacity: '0.95'
+					}
+				},
+				'fade-in-up': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(30px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'slide-pattern': {
+					'0%': {
+						transform: 'translateX(-50px)'
+					},
+					'100%': {
+						transform: 'translateX(0)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-cta': 'pulse-cta 3s ease-in-out infinite',
+				'fade-in-up': 'fade-in-up 0.6s ease-out',
+				'slide-pattern': 'slide-pattern 20s linear infinite'
 			}
 		}
 	},

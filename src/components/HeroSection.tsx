@@ -37,7 +37,7 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen bg-gradient-hero overflow-hidden flex items-center">
+    <section id="hero" className="relative min-h-screen bg-gradient-hero overflow-hidden flex items-center">
       {/* Enhanced Animated Background */}
       <div className="absolute inset-0 opacity-[0.04]">
         {/* Flowing Network Lines */}
@@ -73,9 +73,9 @@ export function HeroSection() {
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-text-subtle mb-16 max-w-4xl mx-auto leading-relaxed">
+          <h3 className="text-xl md:text-2xl text-text-subtle mb-16 max-w-4xl mx-auto leading-relaxed">
             Monetize or install plug-and-play automations — verified, secure, and cross-platform.
-          </p>
+          </h3>
           
           {/* Enhanced Email Form */}
           <div className="max-w-lg mx-auto mb-12">
@@ -85,14 +85,14 @@ export function HeroSection() {
                 placeholder="Enter your email to join the waitlist"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 h-16 px-6 text-lg border-2 border-foreground/20 focus:border-foreground transition-all duration-300 rounded-lg"
+                className="flex-1 h-16 px-6 text-lg border-2 border-foreground/20 focus:border-foreground transition-all duration-300 rounded-lg shadow-lg"
                 required
               />
               <Button 
                 type="submit"
                 disabled={isSubmitting}
                 size="lg"
-                className="bg-foreground hover:bg-foreground/90 text-background h-16 px-8 text-lg font-semibold transition-all duration-300 hover:shadow-strong whitespace-nowrap rounded-lg"
+                className="bg-foreground hover:bg-foreground/90 text-background h-16 px-8 text-lg font-semibold transition-all duration-300 hover:shadow-strong whitespace-nowrap rounded-lg hover:scale-105"
               >
                 {isSubmitting ? "Joining..." : "Get Early Access"}
               </Button>

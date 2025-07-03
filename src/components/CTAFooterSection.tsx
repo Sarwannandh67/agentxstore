@@ -43,7 +43,7 @@ export function CTAFooterSection() {
   };
 
   return (
-    <section className="py-24 bg-foreground text-background">
+    <section id="cta-footer" className="py-24 bg-foreground text-background">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center">
           <div className="flex items-center justify-center mb-6">
@@ -61,17 +61,17 @@ export function CTAFooterSection() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <Input
                 type="email"
-                placeholder="Enter your email address"
+                placeholder="Your email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="bg-background text-foreground border-0 h-16 text-lg placeholder:text-muted-foreground rounded-xl"
+                className="bg-background text-foreground border-0 h-16 text-lg placeholder:text-muted-foreground rounded-xl shadow-lg"
                 required
               />
               
               <select
                 value={platform}
                 onChange={(e) => setPlatform(e.target.value)}
-                className="h-16 px-4 bg-background text-foreground rounded-xl text-lg border-0 placeholder:text-muted-foreground"
+                className="h-16 px-4 bg-background text-foreground rounded-xl text-lg border-0 placeholder:text-muted-foreground shadow-lg"
               >
                 <option value="">Preferred platform (optional)</option>
                 {platforms.map(p => (
@@ -84,14 +84,14 @@ export function CTAFooterSection() {
               type="submit"
               size="lg"
               disabled={isSubmitting}
-              className="w-full bg-background text-foreground hover:bg-background/90 h-16 text-lg font-semibold transition-all duration-300 hover:shadow-strong rounded-xl"
+              className="w-full bg-background text-foreground hover:bg-background/90 h-16 text-lg font-semibold transition-all duration-300 hover:shadow-strong rounded-xl hover:scale-105"
             >
-              {isSubmitting ? "Joining the Revolution..." : "Join the Waitlist"}
+              {isSubmitting ? "Joining the Revolution..." : "Join Waitlist"}
             </Button>
           </form>
           
           <p className="text-sm opacity-70 mb-16">
-            No spam. Only hand-picked, high-quality automations.
+            No spam. Just high-quality automations.
           </p>
           
           <div className="pt-16 border-t border-background/20">
@@ -100,6 +100,9 @@ export function CTAFooterSection() {
             </div>
             <div className="text-lg opacity-80 italic font-medium">Automate. Earn. Repeat.</div>
             <div className="text-sm opacity-60 mt-4">© 2025 AgentXstore. Built for the automation economy.</div>
+            <div className="text-xs opacity-50 mt-2">
+              By joining, you agree to our privacy policy and fair use terms.
+            </div>
           </div>
         </div>
       </div>

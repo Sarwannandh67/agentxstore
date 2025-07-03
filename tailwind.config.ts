@@ -104,16 +104,6 @@ export default {
 						height: '0'
 					}
 				},
-				'pulse-cta': {
-					'0%, 100%': {
-						transform: 'scale(1)',
-						opacity: '1'
-					},
-					'50%': {
-						transform: 'scale(1.02)',
-						opacity: '0.95'
-					}
-				},
 				'fade-in-up': {
 					'0%': {
 						opacity: '0',
@@ -124,21 +114,67 @@ export default {
 						transform: 'translateY(0)'
 					}
 				},
-				'slide-pattern': {
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0px)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
+				},
+				'float-slow': {
+					'0%, 100%': {
+						transform: 'translateY(0px) rotate(0deg)'
+					},
+					'50%': {
+						transform: 'translateY(-20px) rotate(5deg)'
+					}
+				},
+				'draw-line': {
 					'0%': {
-						transform: 'translateX(-50px)'
+						strokeDasharray: '0 100'
 					},
 					'100%': {
-						transform: 'translateX(0)'
+						strokeDasharray: '100 0'
+					}
+				},
+				'pulse-node': {
+					'0%, 100%': {
+						opacity: '0.4',
+						transform: 'scale(1)'
+					},
+					'50%': {
+						opacity: '1',
+						transform: 'scale(1.1)'
+					}
+				},
+				'rotate-slow': {
+					'0%': {
+						transform: 'rotate(45deg)'
+					},
+					'100%': {
+						transform: 'rotate(405deg)'
+					}
+				},
+				'scale-pulse': {
+					'0%, 100%': {
+						transform: 'scale(1)'
+					},
+					'50%': {
+						transform: 'scale(1.05)'
 					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'pulse-cta': 'pulse-cta 3s ease-in-out infinite',
 				'fade-in-up': 'fade-in-up 0.6s ease-out',
-				'slide-pattern': 'slide-pattern 20s linear infinite'
+				'float': 'float 3s ease-in-out infinite',
+				'float-slow': 'float-slow 6s ease-in-out infinite',
+				'draw-line': 'draw-line 3s ease-in-out infinite',
+				'pulse-node': 'pulse-node 2s ease-in-out infinite',
+				'rotate-slow': 'rotate-slow 20s linear infinite',
+				'scale-pulse': 'scale-pulse 4s ease-in-out infinite'
 			}
 		}
 	},

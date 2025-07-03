@@ -107,10 +107,34 @@
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     font-feature-settings: 'cv11', 'ss01';
     font-variation-settings: 'opsz' 32;
+    scroll-behavior: smooth;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     letter-spacing: -0.025em;
+  }
+}
+
+/* Smooth scrolling and enhanced interactions */
+@layer components {
+  .section-padding {
+    @apply py-20 md:py-32;
+  }
+  
+  .container-custom {
+    @apply container mx-auto px-6 lg:px-8;
+  }
+  
+  .heading-gradient {
+    @apply bg-gradient-to-r from-foreground to-foreground bg-clip-text text-transparent;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-medium hover:-translate-y-1;
+  }
+  
+  .button-primary {
+    @apply bg-foreground text-background hover:bg-foreground/90 transition-all duration-300;
   }
 }

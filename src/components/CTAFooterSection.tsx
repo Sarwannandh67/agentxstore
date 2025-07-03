@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
+import { Sparkles } from "lucide-react";
 
 const platforms = [
   "n8n", "Zapier", "LangChain", "CrewAI", "Make", "Automate.io", "Other"
@@ -42,31 +43,35 @@ export function CTAFooterSection() {
   };
 
   return (
-    <section className="py-20 bg-foreground text-background">
+    <section className="py-24 bg-foreground text-background">
       <div className="container mx-auto px-6">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Be the First to Automate the Future
-          </h2>
-          <p className="text-xl mb-12 opacity-90 leading-relaxed">
-            Join thousands of automation creators and businesses building the next generation of AI workflows.
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="flex items-center justify-center mb-6">
+            <Sparkles className="w-8 h-8 mr-3" />
+            <h2 className="text-5xl md:text-6xl font-bold tracking-tight">
+              Join the Future of Automation Commerce
+            </h2>
+          </div>
+          
+          <p className="text-xl mb-16 opacity-90 leading-relaxed">
+            Be among the first to access the world's most comprehensive marketplace for AI agents and automation workflows.
           </p>
           
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-6 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <Input
                 type="email"
                 placeholder="Enter your email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="bg-background text-foreground border-0 h-14 text-lg placeholder:text-muted-foreground"
+                className="bg-background text-foreground border-0 h-16 text-lg placeholder:text-muted-foreground rounded-xl"
                 required
               />
               
               <select
                 value={platform}
                 onChange={(e) => setPlatform(e.target.value)}
-                className="w-full h-14 px-4 bg-background text-foreground rounded-md text-lg border-0 placeholder:text-muted-foreground"
+                className="h-16 px-4 bg-background text-foreground rounded-xl text-lg border-0 placeholder:text-muted-foreground"
               >
                 <option value="">Preferred platform (optional)</option>
                 {platforms.map(p => (
@@ -79,19 +84,22 @@ export function CTAFooterSection() {
               type="submit"
               size="lg"
               disabled={isSubmitting}
-              className="w-full bg-background text-foreground hover:bg-background/90 h-14 text-lg font-semibold animate-pulse-cta"
+              className="w-full bg-background text-foreground hover:bg-background/90 h-16 text-lg font-semibold transition-all duration-300 hover:shadow-strong rounded-xl"
             >
               {isSubmitting ? "Joining the Revolution..." : "Join the Waitlist"}
             </Button>
           </form>
           
-          <p className="text-sm opacity-70 mt-6">
-            No spam. Just powerful automations.
+          <p className="text-sm opacity-70 mb-16">
+            No spam. Only hand-picked, high-quality automations.
           </p>
           
-          <div className="mt-16 pt-8 border-t border-background/20">
-            <div className="text-2xl font-bold mb-2">AgentXstore</div>
-            <div className="text-sm opacity-70 italic">Automate. Earn. Repeat.</div>
+          <div className="pt-16 border-t border-background/20">
+            <div className="flex items-center justify-center mb-4">
+              <div className="text-3xl font-bold">AgentXstore</div>
+            </div>
+            <div className="text-lg opacity-80 italic font-medium">Automate. Earn. Repeat.</div>
+            <div className="text-sm opacity-60 mt-4">© 2025 AgentXstore. Built for the automation economy.</div>
           </div>
         </div>
       </div>

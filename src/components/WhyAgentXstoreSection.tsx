@@ -4,25 +4,25 @@ import { Rocket, Code, Users, Building, Zap, Globe } from "lucide-react";
 const roadmapItems = [
   {
     icon: Code,
-    title: "SDK Integrations",
-    description: "Native SDKs & APIs for seamless integration",
+    title: "Native SDKs & APIs",
+    description: "Developer tools for seamless integration",
     timeline: "Q2 2025"
   },
   {
     icon: Zap,
-    title: "Ecosystem Partner Plugins",
+    title: "Plugin Integration",
     description: "Direct n8n, Zapier marketplace connections",
     timeline: "Q3 2025"
   },
   {
     icon: Building,
-    title: "White-labeled Enterprise Stores",
-    description: "Custom marketplace solutions for enterprises",
+    title: "White-labeled Versions",
+    description: "Enterprise marketplace solutions",
     timeline: "Q4 2025"
   },
   {
     icon: Globe,
-    title: "Creator Grant Programs",
+    title: "Ecosystem Grants",
     description: "Partnership programs and creator funding",
     timeline: "2026"
   }
@@ -30,7 +30,7 @@ const roadmapItems = [
 
 export function WhyAgentXstoreSection() {
   return (
-    <section id="why" className="py-24 bg-foreground text-background">
+    <section className="py-24 bg-foreground text-background">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto animate-fade-in-up">
           <div className="text-center mb-16">
@@ -39,8 +39,8 @@ export function WhyAgentXstoreSection() {
             </h2>
             
             <div className="max-w-4xl mx-auto">
-              <p className="text-2xl font-semibold mb-8 opacity-90 leading-relaxed">
-                AgentXstore is more than a marketplace. It's a secure ecosystem for creators, buyers, and AI-first teams.
+              <p className="text-2xl font-semibold italic mb-8 opacity-90">
+                "AgentXstore isn't a file dump. It's a curated ecosystem to buy, sell, and grow in the new automation-first world."
               </p>
               
               <p className="text-xl leading-relaxed opacity-80 mb-12">

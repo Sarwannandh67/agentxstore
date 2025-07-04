@@ -63,9 +63,9 @@ export function HeroSection() {
         }}></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-6">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6">
         <div className="max-w-5xl mx-auto text-center animate-fade-in-up">
-          <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight tracking-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 md:mb-8 leading-tight tracking-tight">
             The World's First{" "}
             <span className="block mt-2">Marketplace for</span>
             <span className="italic border-b-4 border-foreground mt-2 inline-block bg-gradient-to-r from-foreground to-foreground bg-clip-text">
@@ -73,31 +73,31 @@ export function HeroSection() {
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-text-subtle mb-16 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-text-subtle mb-12 md:mb-16 max-w-4xl mx-auto leading-relaxed px-4">
             Monetize or install plug-and-play automations — verified, secure, and cross-platform.
           </p>
           
           {/* Enhanced Email Form */}
-          <div className="max-w-lg mx-auto mb-12">
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 mb-4">
+          <div className="max-w-lg mx-auto mb-8 md:mb-12 px-4">
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-4">
               <Input
                 type="email"
                 placeholder="Enter your email to join the waitlist"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 h-16 px-6 text-lg border-2 border-foreground/20 focus:border-foreground transition-all duration-300 rounded-lg"
+                className="flex-1 h-14 sm:h-16 px-4 sm:px-6 text-base sm:text-lg border-2 border-foreground/20 focus:border-foreground transition-all duration-300 rounded-lg"
                 required
               />
               <Button 
                 type="submit"
                 disabled={isSubmitting}
                 size="lg"
-                className="bg-foreground hover:bg-foreground/90 text-background h-16 px-8 text-lg font-semibold transition-all duration-300 hover:shadow-strong whitespace-nowrap rounded-lg"
+                className="bg-foreground hover:bg-foreground/90 text-background h-14 sm:h-16 px-6 sm:px-8 text-base sm:text-lg font-semibold transition-all duration-300 hover:shadow-strong whitespace-nowrap rounded-lg"
               >
                 {isSubmitting ? "Joining..." : "Get Early Access"}
               </Button>
             </form>
-            <p className="text-sm text-text-subtle">
+            <p className="text-sm text-text-subtle px-2">
               Launching soon. Limited early access for creators and buyers.
             </p>
           </div>

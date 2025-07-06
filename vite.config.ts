@@ -4,7 +4,7 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "./", // ✅ this fixes 404 on Vercel for JS/CSS assets
+  base: "/",
 
   server: {
     host: "::",

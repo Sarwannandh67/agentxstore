@@ -77,42 +77,6 @@ export function CTAFooterSection() {
             Be among the first to access the world's most comprehensive marketplace for AI agents and automation workflows.
           </p>
           
-          {/* Waitlist Form */}
-          <form onSubmit={handleSubmit} className="max-w-md mx-auto mb-8 sm:mb-12 space-y-4">
-            <Input
-              type="email"
-              placeholder="Enter your email address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="bg-background text-foreground border-0 h-12 sm:h-14 text-base sm:text-lg"
-              required
-            />
-            
-            <select
-              value={platform}
-              onChange={(e) => setPlatform(e.target.value)}
-              className="w-full h-12 sm:h-14 px-4 bg-background text-foreground rounded-md text-base sm:text-lg border-0"
-            >
-              <option value="">Preferred platform (optional)</option>
-              {platforms.map(p => (
-                <option key={p} value={p}>{p}</option>
-              ))}
-            </select>
-            
-            <Button
-              type="submit"
-              size="lg"
-              disabled={isSubmitting}
-              className="w-full bg-background text-foreground hover:bg-background/90 h-12 sm:h-14 text-base sm:text-lg font-semibold"
-            >
-              {isSubmitting ? "Joining..." : "Join the Waitlist"}
-            </Button>
-          </form>
-          
-          <p className="text-sm opacity-70 mb-12 sm:mb-16">
-            No spam. Only hand-picked, high-quality automations.
-          </p>
-          
           <div className="pt-12 sm:pt-16 border-t border-background/20">
             <div className="flex items-center justify-center mb-6">
               <div className="text-3xl font-bold">AgentXstore</div>

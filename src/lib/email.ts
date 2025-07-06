@@ -15,7 +15,7 @@ export async function sendEmail({
 }) {
   try {
     await resend.emails.send({
-      from: 'your-domain@yourdomain.com',
+      from: process.env.EMAIL_FROM || 'AgentX Team <onboarding@resend.dev>',
       to,
       subject,
       html,

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { Sparkles, Twitter, Linkedin, Youtube, Instagram, Facebook } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 const platforms = ["n8n", "Zapier", "LangChain", "CrewAI", "Make", "Other"];
 export function CTAFooterSection() {
   const [email, setEmail] = useState("");
@@ -23,15 +24,44 @@ export function CTAFooterSection() {
     }
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    toast({
-      title: "Welcome to the future! 🚀",
-      description: "You're now on the AgentXstore waitlist."
-    });
-    setEmail("");
-    setPlatform("");
-    setIsSubmitting(false);
+    try {
+      const { error } = await supabase
+        .from('waitlist')
+        .insert([
+          { 
+            email: email.trim().toLowerCase(),
+            platform: platform || null
+          }
+        ]);
+
+      if (error) {
+        if (error.code === '23505') { // Unique violation
+          toast({
+            title: "Already registered!",
+            description: "This email is already on our waitlist.",
+            variant: "destructive"
+          });
+        } else {
+          throw error;
+        }
+      } else {
+        toast({
+          title: "Welcome to the future! 🚀",
+          description: "You're now on the AgentXstore waitlist."
+        });
+        setEmail("");
+        setPlatform("");
+      }
+    } catch (error) {
+      console.error('Error adding to waitlist:', error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   return <section className="py-16 sm:py-20 md:py-24 bg-foreground text-background">
       <div className="container mx-auto px-4 sm:px-6">
@@ -47,7 +77,37 @@ export function CTAFooterSection() {
             Be among the first to access the world's most comprehensive marketplace for AI agents and automation workflows.
           </p>
           
-          
+          {/* Waitlist Form */}
+          <form onSubmit={handleSubmit} className="max-w-md mx-auto mb-8 sm:mb-12 space-y-4">
+            <Input
+              type="email"
+              placeholder="Enter your email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="bg-background text-foreground border-0 h-12 sm:h-14 text-base sm:text-lg"
+              required
+            />
+            
+            <select
+              value={platform}
+              onChange={(e) => setPlatform(e.target.value)}
+              className="w-full h-12 sm:h-14 px-4 bg-background text-foreground rounded-md text-base sm:text-lg border-0"
+            >
+              <option value="">Preferred platform (optional)</option>
+              {platforms.map(p => (
+                <option key={p} value={p}>{p}</option>
+              ))}
+            </select>
+            
+            <Button
+              type="submit"
+              size="lg"
+              disabled={isSubmitting}
+              className="w-full bg-background text-foreground hover:bg-background/90 h-12 sm:h-14 text-base sm:text-lg font-semibold"
+            >
+              {isSubmitting ? "Joining..." : "Join the Waitlist"}
+            </Button>
+          </form>
           
           <p className="text-sm opacity-70 mb-12 sm:mb-16">
             No spam. Only hand-picked, high-quality automations.

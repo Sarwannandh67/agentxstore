@@ -11,11 +11,12 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 app.use(cors());
 app.use(express.json());
 
-// Add root route handler
+// Root route
 app.get('/', (req, res) => {
   res.json({ message: 'AgentXstore API is running' });
 });
 
+// Waitlist email sender
 app.post('/send-confirmation', async (req, res) => {
   const { email, name } = req.body;
 
@@ -43,5 +44,5 @@ app.post('/send-confirmation', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+// 👇 Required for Vercel
+export default app;

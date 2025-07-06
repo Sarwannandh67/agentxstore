@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-import { Sparkles } from "lucide-react";
+import { Sparkles, Twitter, Linkedin, Youtube, Instagram, Facebook } from "lucide-react";
 const platforms = ["n8n", "Zapier", "LangChain", "CrewAI", "Make", "Other"];
 export function CTAFooterSection() {
   const [email, setEmail] = useState("");
@@ -54,11 +54,62 @@ export function CTAFooterSection() {
           </p>
           
           <div className="pt-12 sm:pt-16 border-t border-background/20">
-            <div className="flex items-center justify-center mb-4">
+            <div className="flex items-center justify-center mb-6">
               <div className="text-3xl font-bold">AgentXstore</div>
             </div>
-            <div className="text-lg opacity-80 italic font-medium">Automate. Earn. Repeat.</div>
-            <div className="text-sm opacity-60 mt-4">© 2025 AgentXstore. Built for the automation economy.</div>
+            <div className="text-lg opacity-80 italic font-medium mb-8">Automate. Earn. Repeat.</div>
+            
+            {/* Social Media Icons */}
+            <div className="flex items-center justify-center gap-6 mb-8">
+              <a 
+                href="#" 
+                className="w-10 h-10 rounded-full border border-background/30 flex items-center justify-center hover:border-background/60 hover:bg-background/10 transition-all duration-300"
+                aria-label="Follow us on Twitter"
+              >
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a 
+                href="#" 
+                className="w-10 h-10 rounded-full border border-background/30 flex items-center justify-center hover:border-background/60 hover:bg-background/10 transition-all duration-300"
+                aria-label="Follow us on LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a 
+                href="#" 
+                className="w-10 h-10 rounded-full border border-background/30 flex items-center justify-center hover:border-background/60 hover:bg-background/10 transition-all duration-300"
+                aria-label="Follow us on YouTube"
+              >
+                <Youtube className="w-5 h-5" />
+              </a>
+              <a 
+                href="#" 
+                className="w-10 h-10 rounded-full border border-background/30 flex items-center justify-center hover:border-background/60 hover:bg-background/10 transition-all duration-300"
+                aria-label="Follow us on Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a 
+                href="#" 
+                className="w-10 h-10 rounded-full border border-background/30 flex items-center justify-center hover:border-background/60 hover:bg-background/10 transition-all duration-300"
+                aria-label="Follow us on Facebook"  
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+            </div>
+            
+            {/* Footer Links */}
+            <div className="flex flex-wrap items-center justify-center gap-6 mb-6 text-sm opacity-70">
+              <a href="#" className="hover:opacity-100 transition-opacity">Privacy Policy</a>
+              <span>•</span>
+              <a href="#" className="hover:opacity-100 transition-opacity">Terms of Service</a>
+              <span>•</span>
+              <a href="#" className="hover:opacity-100 transition-opacity">Support</a>
+              <span>•</span>
+              <a href="#" className="hover:opacity-100 transition-opacity">Contact</a>
+            </div>
+            
+            <div className="text-sm opacity-60">© 2025 AgentXstore. Built for the automation economy.</div>
           </div>
         </div>
       </div>

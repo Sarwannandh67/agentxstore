@@ -86,35 +86,35 @@ export function CTAFooterSection() {
             {/* Social Media Icons */}
             <div className="flex items-center justify-center gap-6 mb-8">
               <a 
-                href="#" 
+                href="https://www.x.com/agentxstore/" 
                 className="w-10 h-10 rounded-full border border-background/30 flex items-center justify-center hover:border-background/60 hover:bg-background/10 transition-all duration-300"
                 aria-label="Follow us on Twitter"
               >
                 <Twitter className="w-5 h-5" />
               </a>
               <a 
-                href="#" 
+                href="https://www.linkedin.com/company/sarvagyna/" 
                 className="w-10 h-10 rounded-full border border-background/30 flex items-center justify-center hover:border-background/60 hover:bg-background/10 transition-all duration-300"
                 aria-label="Follow us on LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
               <a 
-                href="#" 
+                href="https://www.youtube.com/@agentxstore" 
                 className="w-10 h-10 rounded-full border border-background/30 flex items-center justify-center hover:border-background/60 hover:bg-background/10 transition-all duration-300"
                 aria-label="Follow us on YouTube"
               >
                 <Youtube className="w-5 h-5" />
               </a>
               <a 
-                href="#" 
+                href="https://www.instagram.com/agentxstore/" 
                 className="w-10 h-10 rounded-full border border-background/30 flex items-center justify-center hover:border-background/60 hover:bg-background/10 transition-all duration-300"
                 aria-label="Follow us on Instagram"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a 
-                href="#" 
+                href="https://www.facebook.com/agentxstore/" 
                 className="w-10 h-10 rounded-full border border-background/30 flex items-center justify-center hover:border-background/60 hover:bg-background/10 transition-all duration-300"
                 aria-label="Follow us on Facebook"  
               >

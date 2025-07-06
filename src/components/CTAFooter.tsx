@@ -27,17 +27,40 @@ export function CTAFooter() {
 
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "You're on the waitlist! 🎉",
-      description: "We'll notify you when AgentXstore launches.",
-    });
-    
-    setEmail("");
-    setPlatform("");
-    setIsSubmitting(false);
+    try {
+      const response = await fetch('http://localhost:5000/send-confirmation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          email: email.trim().toLowerCase(),
+          name: platform || undefined
+        })
+      });
+
+      const data = await response.json();
+      
+      if (data.success) {
+        toast({
+          title: "You're on the waitlist! 🎉",
+          description: "Check your email for confirmation!",
+        });
+        setEmail("");
+        setPlatform("");
+      } else {
+        throw new Error(data.error || 'Failed to join waitlist');
+      }
+    } catch (error) {
+      console.error('Error joining waitlist:', error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

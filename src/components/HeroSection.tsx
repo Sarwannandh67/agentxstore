@@ -43,9 +43,23 @@ export function HeroSection() {
           throw error;
         }
       } else {
+        // Send confirmation email
+        try {
+          await fetch('http://localhost:5000/send-confirmation', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email: email.trim().toLowerCase() })
+          });
+        } catch (emailError) {
+          console.error('Error sending confirmation email:', emailError);
+          // Continue execution even if email fails
+        }
+
         toast({
           title: "Welcome to the future! 🚀",
-          description: "You're now on the AgentXstore waitlist."
+          description: "You're now on the AgentXstore waitlist. Check your email for confirmation!"
         });
         setEmail("");
       }

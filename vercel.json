@@ -5,7 +5,7 @@
     ],
     "routes": [
       { "src": "/send-confirmation", "dest": "server.js" },
-      { "src": "/(.*)", "dest": "/public/$1" }
+      { "src": "/(.*)", "dest": "/public/index.html" }
     ]
   }
   

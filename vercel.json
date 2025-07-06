@@ -8,8 +8,12 @@
     ],
     "routes": [
       {
-        "src": "/.*",
-        "dest": "server.js"
+        "src": "/send-confirmation",
+        "dest": "/server.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/public/$1"
       }
     ]
   }

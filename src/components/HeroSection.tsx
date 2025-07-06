@@ -43,15 +43,22 @@ export function HeroSection() {
           throw error;
         }
       } else {
-        // Send confirmation email
+        // Send confirmation email via Supabase Edge Function
         try {
-          await fetch('http://localhost:5000/send-confirmation', {
+          const response = await fetch('/api/send-confirmation', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ email: email.trim().toLowerCase() })
+            body: JSON.stringify({ 
+              email: email.trim().toLowerCase(),
+              name: email.split('@')[0] // Use email prefix as name
+            })
           });
+
+          if (!response.ok) {
+            console.warn('Email confirmation failed, but continuing...');
+          }
         } catch (emailError) {
           console.error('Error sending confirmation email:', emailError);
           // Continue execution even if email fails

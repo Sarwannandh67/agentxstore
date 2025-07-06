@@ -66,9 +66,9 @@ export function BuyersSection() {
           <div className="relative mt-8 lg:mt-0">
             <div className="bg-card border border-border rounded-2xl p-4 sm:p-6 lg:p-8 shadow-medium">
               <div className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
-                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-red-400 rounded-full"></div>
-                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-yellow-400 rounded-full"></div>
-                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-400 rounded-full"></div>
+                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-destructive rounded-full"></div>
+                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-yellow-500 rounded-full"></div>
+                <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-500 rounded-full"></div>
                 <span className="font-semibold ml-2 sm:ml-4 text-sm sm:text-base">Workflow Preview</span>
               </div>
               <div className="bg-pattern-light rounded-xl p-4 sm:p-6 font-mono text-xs sm:text-sm">

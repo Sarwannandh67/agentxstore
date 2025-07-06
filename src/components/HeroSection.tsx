@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { ChevronDown } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 export function HeroSection() {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -21,14 +22,43 @@ export function HeroSection() {
     }
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    toast({
-      title: "Welcome to the future! 🚀",
-      description: "You're now on the AgentXstore waitlist."
-    });
-    setEmail("");
-    setIsSubmitting(false);
+    try {
+      const { error } = await supabase
+        .from('waitlist')
+        .insert([
+          { 
+            email: email.trim().toLowerCase(),
+            platform: null
+          }
+        ]);
+
+      if (error) {
+        if (error.code === '23505') { // Unique violation
+          toast({
+            title: "Already registered!",
+            description: "This email is already on our waitlist.",
+            variant: "destructive"
+          });
+        } else {
+          throw error;
+        }
+      } else {
+        toast({
+          title: "Welcome to the future! 🚀",
+          description: "You're now on the AgentXstore waitlist."
+        });
+        setEmail("");
+      }
+    } catch (error) {
+      console.error('Error adding to waitlist:', error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   return <section className="relative min-h-screen bg-gradient-hero overflow-hidden flex items-center">
       {/* Enhanced Animated Background */}

@@ -1,10 +1,9 @@
-
 import { HeroSection } from "@/components/HeroSection";
 import { CoreFeaturesGrid } from "@/components/CoreFeaturesGrid";
 import { BuyersSection } from "@/components/BuyersSection";
 import { SellersSection } from "@/components/SellersSection";
 import { WhyAgentXstoreSection } from "@/components/WhyAgentXstoreSection";
-import { CTAFooterSection } from "@/components/CTAFooterSection";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -14,7 +13,7 @@ const Index = () => {
       <BuyersSection />
       <SellersSection />
       <WhyAgentXstoreSection />
-      <CTAFooterSection />
+      <Footer />
     </div>
   );
 };

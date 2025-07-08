@@ -2,7 +2,7 @@ import React from 'react';
 import { Logo } from './Logo';
 import { Twitter, Linkedin, Youtube, Instagram, Facebook } from "lucide-react";
 export function Footer() {
-  return <footer className="py-8 bg-zinc-950">
+  return <footer className="py-8 bg-zinc-50">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center justify-between md:flex-row">
           <div className="mb-4 md:mb-0">

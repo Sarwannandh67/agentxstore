@@ -16,7 +16,7 @@ export function Footer() {
             <Facebook className="h-5 w-5 text-muted-foreground hover:text-foreground transition-colors cursor-pointer" />
           </div>
           <div className="text-center md:text-right">
-            <p className="text-sm text-slate-50">
+            <p className="text-sm text-zinc-950">
               {new Date().getFullYear()} AgentXstore. All rights reserved.
             </p>
           </div>

@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { ChevronDown } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { Logo } from "@/components/Logo";
 export function HeroSection() {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -109,6 +110,11 @@ export function HeroSection() {
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6">
         <div className="max-w-5xl mx-auto text-center animate-fade-in-up">
+          {/* Logo */}
+          <div className="mb-8 md:mb-12">
+            <Logo className="h-16 md:h-20 w-auto mx-auto" />
+          </div>
+          
           <h1 className="sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-8 leading-tight tracking-tight xl:text-5xl text-4xl">
             The World's First{" "}
             <span className="block mt-2">Marketplace for</span>
